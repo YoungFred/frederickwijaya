@@ -23,7 +23,7 @@ export const profile = {
   summary:
     "Junior undergraduate in the Interdisciplinary Program of Engineering at National Tsing Hua University. Curious, adaptable, and motivated by the way people, systems, and projects come together.",
   location: "Hsinchu City, Taiwan",
-  email: "your.email@example.com",
+  email: "frederickwijaya1688@gmail.com",
   linkedin: "linkedin.com/in/your-profile",
 };
 
