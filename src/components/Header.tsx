@@ -4,14 +4,12 @@ import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
 
 const navItems = [
-  { label: "Projects", path: "/work" },
-  { label: "About", path: "/about" },
+  { label: "Resume", path: "/about" },
+  { label: "Work", path: "/work" },
   { label: "Contact", path: "/contact" },
 ];
 
-interface HeaderProps {
-  revealMode?: boolean;
-}
+interface HeaderProps { revealMode?: boolean; }
 
 export function Header({ revealMode = false }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,106 +18,51 @@ export function Header({ revealMode = false }: HeaderProps) {
   const location = useLocation();
   const { theme, setTheme } = useTheme();
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
-    if (!revealMode) {
-      setIsVisible(true);
-      return;
-    }
-
-    const handleMouseMove = (e: MouseEvent) => {
-      setIsVisible(e.clientY < 100);
-    };
-
+    if (!revealMode) { setIsVisible(true); return; }
+    const handleMouseMove = (e: MouseEvent) => setIsVisible(e.clientY < 100);
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [revealMode]);
 
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
+  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isVisible 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 -translate-y-full pointer-events-none'
-      }`}
-    >
-      <div className="container-wide relative">
-        <div className="flex items-center justify-between h-20 md:h-24">
-          {/* Logo */}
-          <Link 
-            to="/" 
-            className="font-display text-lg font-semibold tracking-tight text-foreground hover:opacity-70 transition-opacity"
-          >
-            Jordan Studio
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"}`}>
+      <div className="container-wide">
+        <div className="flex h-20 items-center justify-between md:h-24">
+          <Link to="/" className="font-display text-base font-semibold tracking-tight text-foreground hover:text-accent transition-colors">
+            Frederick <span className="text-accent">/</span> 黄瑞鹏
           </Link>
-
-          {/* Desktop Navigation - Centered */}
-          <nav className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
+          <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 md:flex">
             {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`text-xs font-sans tracking-widest uppercase transition-all duration-300 hover:tracking-[0.2em] ${
-                  location.pathname === item.path
-                    ? "text-foreground"
-                    : "text-foreground/80 hover:text-foreground"
-                }`}
-              >
+              <Link key={item.path} to={item.path} className={`text-xs uppercase tracking-widest transition-colors hover:text-accent ${location.pathname === item.path ? "text-foreground" : "text-muted-foreground"}`}>
                 {item.label}
               </Link>
             ))}
           </nav>
-
-          {/* Right - Theme Toggle */}
-          <div className="hidden md:flex items-center">
-            <button
-              onClick={toggleTheme}
-              className="p-2 text-foreground/60 hover:text-foreground transition-colors"
-              aria-label="Toggle theme"
-            >
+          <div className="hidden items-center md:flex">
+            <button onClick={toggleTheme} className="p-2 text-muted-foreground hover:text-accent transition-colors" aria-label="Toggle theme">
               {mounted && (theme === "dark" ? <Sun size={18} /> : <Moon size={18} />)}
             </button>
           </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-2">
-            <button
-              onClick={toggleTheme}
-              className="p-2 text-foreground/60 hover:text-foreground transition-colors"
-              aria-label="Toggle theme"
-            >
+          <div className="flex items-center gap-2 md:hidden">
+            <button onClick={toggleTheme} className="p-2 text-muted-foreground hover:text-accent transition-colors" aria-label="Toggle theme">
               {mounted && (theme === "dark" ? <Sun size={18} /> : <Moon size={18} />)}
             </button>
-            <button
-              className="p-2 -mr-2 text-foreground"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
-            >
+            <button className="p-2 text-foreground" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-20 bg-background z-40 animate-fade-in">
-          <nav className="container-wide py-12 flex flex-col gap-8">
+        <div className="fixed inset-0 top-20 z-40 bg-background md:hidden animate-fade-in">
+          <nav className="container-wide flex flex-col gap-8 py-12">
             {navItems.map((item, index) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setIsMenuOpen(false)}
-                className="text-4xl font-display text-foreground animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
+              <Link key={item.path} to={item.path} onClick={() => setIsMenuOpen(false)} className="font-display text-4xl text-foreground hover:text-accent animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
                 {item.label}
               </Link>
             ))}
