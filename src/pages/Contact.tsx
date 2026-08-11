@@ -14,7 +14,7 @@ const Contact = () => {
             <div className="mt-12 space-y-6">
               <a href={`mailto:${profile.email}`} className="group flex items-center gap-4 text-lg hover:text-accent transition-colors"><Mail size={20} className="text-accent" /><span>{profile.email}</span><ArrowUpRight size={18} className="opacity-0 transition-opacity group-hover:opacity-100" /></a>
               <a href={`https://${profile.linkedin}`} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 text-lg hover:text-accent transition-colors"><Linkedin size={20} className="text-accent" /><span>{profile.linkedin}</span><ArrowUpRight size={18} className="opacity-0 transition-opacity group-hover:opacity-100" /></a>
-              <a href="https://instagram.com/your-profile" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 text-lg hover:text-accent transition-colors"><Instagram size={20} className="text-accent" /><span>instagram.com/your-profile</span><ArrowUpRight size={18} className="opacity-0 transition-opacity group-hover:opacity-100" /></a>
+              <a href="https://shorturl.at/mGSmJ" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 text-lg hover:text-accent transition-colors"><Instagram size={20} className="text-accent" /><span>shorturl.at/mGSmJ</span><ArrowUpRight size={18} className="opacity-0 transition-opacity group-hover:opacity-100" /></a>
             </div>
           </div>
           <div className="flex flex-col justify-end border-t border-separator pt-8 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
