@@ -7,7 +7,7 @@ const Work = () => {
     <Layout showEchelonFooter>
       <section className="container-wide border-b border-separator pt-16 pb-16 md:pt-24 md:pb-20">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-[1fr_20rem] md:items-end">
-          <div><p className="text-label mb-6 text-accent">Portfolio / evidence</p><h1 className="text-display">Selected work.</h1></div>
+          <div><p className="text-label mb-6 text-accent">Portfolio / projects</p><h1 className="text-display">Selected projects.</h1></div>
           <p className="text-lg leading-relaxed text-muted-foreground">A visual record of creative, digital, and experimental projects. Project details can be expanded with your role, tools, and outcomes.</p>
         </div>
       </section>

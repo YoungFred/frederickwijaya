@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 
 const navItems = [
   { label: "Resume", path: "/about" },
-  { label: "Work", path: "/work" },
+  { label: "Projects", path: "/work" },
   { label: "Contact", path: "/contact" },
 ];
 
