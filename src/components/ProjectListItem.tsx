@@ -1,80 +1,19 @@
-import { useState } from "react";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-interface ProjectListItemProps {
-  id: string;
-  title: string;
-  tags: string[];
-  year: string;
-  image: string;
-  index: number;
-}
+interface ProjectListItemProps { id: string; title: string; tags: string[]; year: string; image: string; index: number; }
 
-export function ProjectListItem({ 
-  id, 
-  title, 
-  tags, 
-  year, 
-  image,
-}: ProjectListItemProps) {
-  const [isHovered, setIsHovered] = useState(false);
-
+export function ProjectListItem({ id, title, tags, year, image }: ProjectListItemProps) {
   return (
-    <Link
-      to={`/work/${id}`}
-      className={`group block border-b border-separator transition-colors duration-300 ${
-        isHovered ? 'bg-accent' : ''
-      }`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="container-wide py-5 md:py-6">
-        <div className="flex items-center justify-between gap-4">
-          {/* Title */}
-          <h3 className={`flex-1 text-lg md:text-xl lg:text-2xl font-sans uppercase tracking-wide transition-colors duration-300 ${
-            isHovered ? 'text-accent-foreground' : 'text-foreground'
-          }`}>
-            {title}
-          </h3>
-
-          {/* Tags */}
-          <div className="hidden sm:flex items-center gap-2">
-            {tags.map((tag) => (
-              <span
-                key={tag}
-                className={`text-[10px] md:text-xs uppercase tracking-widest px-3 py-1 border transition-colors duration-300 ${
-                  isHovered 
-                    ? 'border-accent-foreground text-accent-foreground' 
-                    : 'border-separator text-muted-foreground'
-                }`}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          {/* Year */}
-          <span className={`text-xs md:text-sm uppercase tracking-widest transition-colors duration-300 ${
-            isHovered ? 'text-accent-foreground' : 'text-muted-foreground'
-          }`}>
-            {year}
-          </span>
-
-          {/* Hover Image */}
-          <div 
-            className={`fixed right-8 lg:right-32 top-1/2 -translate-y-1/2 w-64 lg:w-80 aspect-[3/4] pointer-events-none z-40 transition-all duration-300 ${
-              isHovered 
-                ? "opacity-100 translate-x-0" 
-                : "opacity-0 translate-x-4"
-            }`}
-          >
-            <img
-              src={image}
-              alt={title}
-              className="w-full h-full object-cover"
-            />
-          </div>
+    <Link to={`/work/${id}`} className="group block border-b border-separator transition-colors duration-300 hover:bg-accent">
+      <div className="container-wide py-6 md:py-8">
+        <div className="flex items-center justify-between gap-4 group-hover:text-accent-foreground">
+          <div className="flex min-w-0 flex-1 items-center gap-5"><span className="hidden text-label text-current/60 sm:block">Selected</span><h3 className="font-display text-xl font-semibold leading-tight md:text-2xl">{title}</h3></div>
+          <div className="hidden items-center gap-2 sm:flex">{tags.map((tag) => <span key={tag} className="border border-current/30 px-3 py-1 text-[10px] uppercase tracking-widest">{tag}</span>)}</div>
+          <span className="text-xs uppercase tracking-widest">{year}</span><ArrowUpRight size={18} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
         </div>
+        <div className="mt-2 pl-0 text-sm text-current/60 sm:pl-[4.75rem]">Portfolio project · {tags[0]?.toLowerCase()}</div>
+        <div className="pointer-events-none fixed right-8 top-1/2 z-40 hidden aspect-[3/4] w-64 -translate-y-1/2 translate-x-4 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 lg:block"><img src={image} alt={title} className="h-full w-full object-cover" /></div>
       </div>
     </Link>
   );
