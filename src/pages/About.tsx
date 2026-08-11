@@ -1,6 +1,6 @@
 import { MapPin } from "lucide-react";
 import { Layout } from "@/components/Layout";
-import { education, experience, profile, skillGroups } from "@/data/resume";
+import { education, experienceByOrganization, profile, skillGroups } from "@/data/resume";
 
 const About = () => {
   return (
@@ -22,19 +22,25 @@ const About = () => {
             <p className="text-label text-accent">01 / experience</p>
             <h2 className="text-headline mt-4 max-w-xs">Learning by being in the work.</h2>
           </div>
-          <div className="divide-y divide-separator">
-            {experience.map((entry) => (
-              <article key={`${entry.organization}-${entry.role}`} className="grid grid-cols-1 gap-5 py-8 first:pt-0 last:pb-0 md:grid-cols-[10rem_1fr] md:gap-8">
-                <div>
-                  <p className="text-label text-foreground">{entry.period}</p>
-                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{entry.location}</p>
-                  {entry.type && <p className="mt-1 text-xs text-muted-foreground">{entry.type}</p>}
-                </div>
-                <div>
-                  <p className="text-sm text-accent">{entry.organization}</p>
-                  <h3 className="mt-2 font-display text-2xl font-semibold leading-tight">{entry.role}</h3>
-                  <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">{entry.description}</p>
-                  {entry.skills && <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-xs uppercase tracking-widest text-foreground/70">{entry.skills.map((skill) => <span key={skill}>{skill}</span>)}</div>}
+          <div>
+            {experienceByOrganization.map((group) => (
+              <article key={group.organization} className="border-t border-separator py-8 first:border-t-0 first:pt-0 last:pb-0">
+                <p className="text-sm text-accent">{group.organization}</p>
+                <div className="mt-6 divide-y divide-separator">
+                  {group.entries.map((entry) => (
+                    <div key={`${group.organization}-${entry.role}`} className="grid grid-cols-1 gap-5 py-7 first:pt-0 last:pb-0 md:grid-cols-[10rem_1fr] md:gap-8">
+                      <div>
+                        <p className="text-label text-foreground">{entry.period}</p>
+                        <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{entry.location}</p>
+                        {entry.type && <p className="mt-1 text-xs text-muted-foreground">{entry.type}</p>}
+                      </div>
+                      <div>
+                        <h3 className="font-display text-2xl font-semibold leading-tight">{entry.role}</h3>
+                        <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">{entry.description}</p>
+                        {entry.skills && <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-xs uppercase tracking-widest text-foreground/70">{entry.skills.map((skill) => <span key={skill}>{skill}</span>)}</div>}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </article>
             ))}

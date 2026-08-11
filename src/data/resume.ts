@@ -8,6 +8,11 @@ export interface ExperienceEntry {
   skills?: string[];
 }
 
+export interface ExperienceGroup {
+  organization: string;
+  entries: ExperienceEntry[];
+}
+
 export interface EducationEntry {
   organization: string;
   program: string;
