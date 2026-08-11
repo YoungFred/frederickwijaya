@@ -12,7 +12,7 @@ export function Footer({ variant = "default" }: FooterProps) {
         <div className="container-wide grid grid-cols-2 gap-8 py-12 md:grid-cols-4 md:gap-12 md:py-16">
           <div className="space-y-3"><p className="text-label">Location</p><p className="text-sm text-foreground">{profile.location}</p></div>
           <div className="space-y-3"><p className="text-label">Explore</p><div className="space-y-1 text-sm"><Link to="/about" className="block hover:text-accent transition-colors">Resume</Link><Link to="/work" className="block hover:text-accent transition-colors">Work</Link><Link to="/contact" className="block hover:text-accent transition-colors">Contact</Link></div></div>
-          <div className="space-y-3"><p className="text-label">Contact</p><a href={`mailto:${profile.email}`} className="block text-sm hover:text-accent transition-colors">{profile.email}</a><p className="mt-1 text-xs text-muted-foreground">Replace with your real email</p></div>
+          <div className="space-y-3"><p className="text-label">Contact</p><a href={`mailto:${profile.email}`} className="block text-sm hover:text-accent transition-colors">{profile.email}</a></div>
           <div className="space-y-3"><p className="text-label">Legal</p><p className="text-sm text-muted-foreground">© {currentYear} Frederick WIjaya</p></div>
         </div>
         <div className="overflow-hidden border-t border-separator py-6 md:py-8"><div className="flex animate-marquee whitespace-nowrap">{Array.from({ length: 8 }).map((_, i) => <span key={i} className="mx-12 font-display text-6xl font-bold text-foreground md:text-8xl lg:text-[10rem]">FREDERICK WIJAYA</span>)}</div></div>
