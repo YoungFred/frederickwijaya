@@ -8,6 +8,11 @@ export interface ExperienceEntry {
   skills?: string[];
 }
 
+export interface ExperienceGroup {
+  organization: string;
+  entries: ExperienceEntry[];
+}
+
 export interface EducationEntry {
   organization: string;
   program: string;
@@ -119,6 +124,21 @@ export const experience: ExperienceEntry[] = [
     skills: ["Inventory control", "Cataloging", "Research materials"],
   },
 ];
+
+export const experienceByOrganization: ExperienceGroup[] = experience.reduce<ExperienceGroup[]>(
+  (groups, entry) => {
+    const existingGroup = groups.find((group) => group.organization === entry.organization);
+
+    if (existingGroup) {
+      existingGroup.entries.push(entry);
+    } else {
+      groups.push({ organization: entry.organization, entries: [entry] });
+    }
+
+    return groups;
+  },
+  [],
+);
 
 export const education: EducationEntry[] = [
   {
