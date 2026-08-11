@@ -29,8 +29,8 @@ export const profile = {
 
 export const experience: ExperienceEntry[] = [
   {
-    organization: "Rotational Internship",
-    role: "Corporate Operations & Quality Control",
+    organization: "臺灣惠爾得股份有限公司 | TAIWAN FELT CO., LTD",
+    role: "Rotational Intern – Corporate Operations & Quality Control",
     period: "Jul 2026 — Present",
     location: "Bade District, Taoyuan City, Taiwan",
     type: "On-site",
@@ -39,8 +39,8 @@ export const experience: ExperienceEntry[] = [
     skills: ["Corporate operations", "Quality control", "Documentation"],
   },
   {
-    organization: "Rotational Internship",
-    role: "Manufacturing & Production Operations",
+    organization: "臺灣惠爾得股份有限公司 | TAIWAN FELT CO., LTD",
+    role: "Rotational Intern – Manufacturing & Production Operations",
     period: "Jun 2026 — Jul 2026",
     location: "Bade District, Taoyuan City, Taiwan",
     type: "On-site",
