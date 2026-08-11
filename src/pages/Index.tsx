@@ -78,10 +78,10 @@ const Index = () => {
           <div className="container-wide">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-24">
               <div>
-                <p className="text-label mb-4 text-accent">03 / selected work</p>
+                <p className="text-label mb-4 text-accent">03 / selected projects</p>
                 <h2 className="text-headline max-w-md">Projects that show how I think and make.</h2>
                 <Link to="/work" className="mt-8 inline-flex items-center gap-2 border-b border-foreground pb-2 text-sm uppercase tracking-widest hover:border-accent hover:text-accent transition-colors">
-                  Explore all work <ArrowUpRight size={16} />
+                  Explore all projects <ArrowUpRight size={16} />
                 </Link>
               </div>
               <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">

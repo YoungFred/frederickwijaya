@@ -11,7 +11,7 @@ export function Footer({ variant = "default" }: FooterProps) {
       <footer className="mt-auto border-t border-separator">
         <div className="container-wide grid grid-cols-2 gap-8 py-12 md:grid-cols-4 md:gap-12 md:py-16">
           <div className="space-y-3"><p className="text-label">Location</p><p className="text-sm text-foreground">{profile.location}</p></div>
-          <div className="space-y-3"><p className="text-label">Explore</p><div className="space-y-1 text-sm"><Link to="/about" className="block hover:text-accent transition-colors">Resume</Link><Link to="/work" className="block hover:text-accent transition-colors">Work</Link><Link to="/contact" className="block hover:text-accent transition-colors">Contact</Link></div></div>
+          <div className="space-y-3"><p className="text-label">Explore</p><div className="space-y-1 text-sm"><Link to="/about" className="block hover:text-accent transition-colors">Resume</Link><Link to="/work" className="block hover:text-accent transition-colors">Projects</Link><Link to="/contact" className="block hover:text-accent transition-colors">Contact</Link></div></div>
           <div className="space-y-3"><p className="text-label">Contact</p><a href={`mailto:${profile.email}`} className="block text-sm hover:text-accent transition-colors">{profile.email}</a></div>
           <div className="space-y-3"><p className="text-label">Legal</p><p className="text-sm text-muted-foreground">© {currentYear} Frederick WIjaya</p></div>
         </div>
@@ -20,5 +20,5 @@ export function Footer({ variant = "default" }: FooterProps) {
     );
   }
 
-  return <footer className="border-t border-separator"><div className="container-wide flex flex-col justify-between gap-8 py-12 md:flex-row md:items-end md:py-16"><div><p className="font-display text-xl font-semibold">Frederick WIjaya 黄瑞鹏</p><p className="mt-2 text-sm text-muted-foreground">Engineering · operations · events</p></div><div className="flex gap-8 text-sm text-muted-foreground"><Link to="/about" className="hover:text-accent">Resume</Link><Link to="/work" className="hover:text-accent">Work</Link><Link to="/contact" className="hover:text-accent">Contact</Link></div><div className="text-sm text-muted-foreground"><p>© {currentYear} Frederick WIjaya</p><p className="mt-1">{profile.location}</p></div></div></footer>;
+  return <footer className="border-t border-separator"><div className="container-wide flex flex-col justify-between gap-8 py-12 md:flex-row md:items-end md:py-16"><div><p className="font-display text-xl font-semibold">Frederick WIjaya 黄瑞鹏</p><p className="mt-2 text-sm text-muted-foreground">Engineering · operations · events</p></div><div className="flex gap-8 text-sm text-muted-foreground"><Link to="/about" className="hover:text-accent">Resume</Link><Link to="/work" className="hover:text-accent">Projects</Link><Link to="/contact" className="hover:text-accent">Contact</Link></div><div className="text-sm text-muted-foreground"><p>© {currentYear} Frederick WIjaya</p><p className="mt-1">{profile.location}</p></div></div></footer>;
 }
