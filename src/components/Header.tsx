@@ -30,15 +30,15 @@ export function Header({ revealMode = false }: HeaderProps) {
   const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 border-b border-separator/60 bg-background/70 backdrop-blur-md transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"}`}>
       <div className="container-wide">
-        <div className="flex h-20 items-center justify-between md:h-24">
-          <Link to="/" className="font-display text-base font-semibold tracking-tight text-foreground hover:text-accent transition-colors">
+        <div className="flex h-20 items-center justify-between md:h-20">
+          <Link to="/" className="font-display text-xl tracking-tight text-foreground hover:text-accent transition-colors">
             Frederick <span className="text-accent">/</span> 黄瑞鹏
           </Link>
           <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 md:flex">
             {navItems.map((item) => (
-              <Link key={item.path} to={item.path} className={`text-xs uppercase tracking-widest transition-colors hover:text-accent ${location.pathname === item.path ? "text-foreground" : "text-muted-foreground"}`}>
+              <Link key={item.path} to={item.path} className={`text-mono text-[0.7rem] uppercase transition-colors hover:text-accent ${location.pathname === item.path ? "text-accent" : "text-muted-foreground"}`}>
                 {item.label}
               </Link>
             ))}
@@ -62,7 +62,7 @@ export function Header({ revealMode = false }: HeaderProps) {
         <div className="fixed inset-0 top-20 z-40 bg-background md:hidden animate-fade-in">
           <nav className="container-wide flex flex-col gap-8 py-12">
             {navItems.map((item, index) => (
-              <Link key={item.path} to={item.path} onClick={() => setIsMenuOpen(false)} className="font-display text-4xl text-foreground hover:text-accent animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Link key={item.path} to={item.path} onClick={() => setIsMenuOpen(false)} className="font-display text-5xl text-foreground hover:text-accent animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
                 {item.label}
               </Link>
             ))}
