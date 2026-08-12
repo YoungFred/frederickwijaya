@@ -80,6 +80,7 @@
 
 @layer components {
   .container-wide { @apply mx-auto px-6 md:px-12 lg:px-20 xl:px-32; max-width: 1600px; }
+  .font-display, h1, h2, h3, h4, h5, h6 { font-synthesis-weight: none; }
   .text-display { @apply text-6xl md:text-8xl lg:text-9xl font-normal tracking-tight; font-family: 'Instrument Serif', Georgia, serif; line-height: 0.95; }
   .text-headline { @apply text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight; font-family: 'Instrument Serif', Georgia, serif; line-height: 1.05; }
   .text-label { @apply text-[0.65rem] md:text-xs uppercase text-muted-foreground; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.22em; }
