@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
+import logoAsset from "@/assets/logo-eagle.png.asset.json";
 
 const navItems = [
   { label: "Resume", path: "/about" },
@@ -33,8 +34,9 @@ export function Header({ revealMode = false }: HeaderProps) {
     <header className={`fixed top-0 left-0 right-0 z-50 border-b border-separator/60 bg-background/70 backdrop-blur-md transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"}`}>
       <div className="container-wide">
         <div className="flex h-20 items-center justify-between md:h-20">
-          <Link to="/" className="font-display text-xl tracking-tight text-foreground hover:text-accent transition-colors">
-            Frederick <span className="text-accent">/</span> 黄瑞鹏
+          <Link to="/" className="flex items-center gap-3 font-display text-xl tracking-tight text-foreground hover:text-accent transition-colors">
+            <img src={logoAsset.url} alt="Frederick Wijaya eagle logo" className="h-8 w-auto" />
+            <span>Frederick <span className="text-accent">/</span> 黄瑞鹏</span>
           </Link>
           <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 md:flex">
             {navItems.map((item) => (
