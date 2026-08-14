@@ -14,6 +14,14 @@ const About = () => {
           <div className="border-l border-accent pl-6 text-lg leading-relaxed text-muted-foreground">
             <p>{profile.summary}</p>
             <p className="mt-5 flex items-center gap-2 text-sm text-foreground"><MapPin size={16} className="text-accent" /> {profile.location}</p>
+            <a
+              href={profile.resumeUrl}
+              download="Frederick_WIjaya_CV.pdf"
+              className="mt-6 inline-flex items-center gap-2 border border-accent bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
+            >
+              <Download size={18} />
+              Download CV
+            </a>
           </div>
         </header>
 
