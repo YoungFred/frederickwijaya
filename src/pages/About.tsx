@@ -1,4 +1,4 @@
-import { MapPin } from "lucide-react";
+import { Download, MapPin } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { education, experienceByOrganization, profile, skillGroups } from "@/data/resume";
 
