@@ -45,6 +45,11 @@ const About = () => {
                       <div>
                         <h3 className="font-display text-2xl font-semibold leading-tight">{entry.role}</h3>
                         <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">{entry.description}</p>
+                        {entry.highlights && (
+                          <ul className="mt-5 list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
+                            {entry.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+                          </ul>
+                        )}
                         {entry.skills && <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-xs uppercase tracking-widest text-foreground/70">{entry.skills.map((skill) => <span key={skill}>{skill}</span>)}</div>}
                       </div>
                     </div>
