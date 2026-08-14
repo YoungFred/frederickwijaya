@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { ParticleField } from "@/components/ParticleField";
@@ -7,16 +7,16 @@ import { education, experience, profile, skillGroups } from "@/data/resume";
 import { projects } from "@/data/projects";
 
 const tickerItems = [
-  "Interdisciplinary Engineering",
+  "Engineering student",
   "NTHU",
   "Operations",
-  "Quality Control",
-  "Event Planning",
+  "Process optimization",
+  "Event planning",
   "Master of Ceremonies",
   "Chassis Division",
-  "Manufacturing",
-  "Cataloging",
-  "Protocol Training",
+  "Autodesk Inventor",
+  "Data cataloging",
+  "Protocol training",
 ];
 
 const Index = () => {
