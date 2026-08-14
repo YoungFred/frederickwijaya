@@ -1,3 +1,5 @@
+import resumeAsset from "@/assets/Frederick_WIjaya_CV.pdf.asset.json";
+
 export interface ExperienceEntry {
   organization: string;
   role: string;
@@ -5,6 +7,7 @@ export interface ExperienceEntry {
   location: string;
   type?: string;
   description: string;
+  highlights?: string[];
   skills?: string[];
 }
 
@@ -24,104 +27,85 @@ export interface EducationEntry {
 export const profile = {
   name: "Frederick WIjaya 黄瑞鹏",
   shortName: "Frederick WIjaya",
-  title: "Engineering student · operations · events",
+  title: "Engineering student",
   summary:
-    "Junior undergraduate in the Interdisciplinary Program of Engineering at National Tsing Hua University. Curious, adaptable, and motivated by the way people, systems, and projects come together.",
+    "Analytical engineering student at National Tsing Hua University with practical experience in operational workflow optimization, project management, and diplomatic leadership. Proven track record in data cataloging, cross-functional team management, and international stakeholder coordination.",
   location: "Hsinchu City, Taiwan",
+  phone: "+886-970-019-931",
   email: "frederickwijaya1688@gmail.com",
   linkedin: "linkedin.com/in/frederick-wijaya",
+  instagram: "instagram.com/frederick_wijaya168",
+  tinyUrl: "tinyurl.com/frederickw168",
+  resumeUrl: resumeAsset.url,
 };
 
 export const experience: ExperienceEntry[] = [
   {
-    organization: "臺灣惠爾得股份有限公司 | TAIWAN FELT CO., LTD",
-    role: "Rotational Intern – Corporate Operations & Quality Control",
-    period: "Jul 2026 — Present",
+    organization: "Taiwan Felt Co., Ltd.",
+    role: "Rotational Intern (Corporate Operations & Manufacturing)",
+    period: "Jun 2026 — Aug 2026",
     location: "Bade District, Taoyuan City, Taiwan",
     type: "On-site",
     description:
-      "Transitioned to the corporate office to manage administrative paperwork and support daily operational documentation.",
-    skills: ["Corporate operations", "Quality control", "Documentation"],
-  },
-  {
-    organization: "臺灣惠爾得股份有限公司 | TAIWAN FELT CO., LTD",
-    role: "Rotational Intern – Manufacturing & Production Operations",
-    period: "Jun 2026 — Jul 2026",
-    location: "Bade District, Taoyuan City, Taiwan",
-    type: "On-site",
-    description:
-      "Studied end-to-end production lines and machinery workflows on the manufacturing floor during the initial rotation.",
-    skills: ["Manufacturing", "Production operations", "Process observation"],
+      "Rotated across corporate divisions and manufacturing floors to standardize operations, document workflows, and identify production bottlenecks.",
+    highlights: [
+      "Standardized administrative workflows and operational documentation across 3 corporate divisions, reducing internal document processing time by 15%.",
+      "Analyzed end-to-end production lines and machinery workflows across 4 manufacturing shop floors to identify and eliminate process bottlenecks.",
+    ],
+    skills: ["Operations", "Process optimization", "Documentation"],
   },
   {
     organization: "NTHU Racing",
-    role: "Member — Chassis Division",
+    role: "Engineering Member (Chassis Division)",
     period: "Mar 2026 — Present",
     location: "Hsinchu City, Taiwan",
     type: "On-site",
     description:
-      "Active team member following the completion of a six-month chassis engineering and workshop safety training program.",
-    skills: ["Engineering teamwork", "Workshop safety", "Chassis systems"],
+      "Active chassis division member applying CAD-based design and engineering teamwork to develop competition vehicle systems.",
+    highlights: [
+      "Utilized Autodesk Inventor to design high-performance chassis systems, optimizing structural integrity and vehicle safety frame specs.",
+    ],
+    skills: ["Autodesk Inventor", "CAD drawing", "Engineering teamwork"],
   },
   {
-    organization: "National Tsing Hua University · NTHU ERSA",
-    role: "Chief Trainer (司儀／襄儀教學長)",
-    period: "Jul 2026 — Present",
-    location: "Hsinchu City, Taiwan",
-    type: "Part-time",
-    description:
-      "Developed and delivered training curricula for new trainees in MC and Xiangyi protocols, and mentored more than ten trainees.",
-    skills: ["Training", "Public speaking", "Protocol"],
-  },
-  {
-    organization: "National Tsing Hua University · NTHU ERSA",
-    role: "Active Duty Member | 清華大學紫荊大使",
+    organization: "NTHU Student Ambassadors (ERSA)",
+    role: "Chief Trainer & Diplomatic Protocol Lead",
     period: "Jul 2025 — Present",
     location: "Hsinchu City, Taiwan",
     type: "Part-time",
     description:
-      "Served as the primary English Master of Ceremonies and Xiangyi protocol lead for university ceremonies, VIP receptions, and international events.",
-    skills: ["Event protocol", "MC", "International events"],
-  },
-  {
-    organization: "National Tsing Hua University · NTHU ERSA",
-    role: "Trainee | 清華大學紫荊大使",
-    period: "Sep 2025 — Jul 2026",
-    location: "Hsinchu City, Taiwan",
-    type: "Part-time",
-    description:
-      "Completed a rigorous six-month intensive training program focused on professional emceeing, public speaking, and formal campus protocols.",
-    skills: ["Emceeing", "Public speaking", "Campus protocol"],
+      "Protocol lead and chief trainer for NTHU’s diplomatic ambassador team, designing curricula and hosting high-profile ceremonies for international delegations.",
+    highlights: [
+      "Promoted to Chief Trainer (Jul 2026); designed and delivered a comprehensive 6-week training curriculum on diplomatic protocol and public speaking to 12 trainees.",
+      "Served as primary English Master of Ceremonies (MC) for 8+ high-profile university ceremonies hosting VIP international delegations.",
+    ],
+    skills: ["Public speaking", "Protocol training", "MC"],
   },
   {
     organization: "NTHU IBPSA",
     role: "Senior Event Planner",
-    period: "Jun 2026 — Present",
+    period: "Jul 2025 — Present",
     location: "Hsinchu City, Taiwan",
     type: "Full-time",
     description:
-      "Spearheaded the end-to-end planning, strategic direction, and execution of large-scale flagship initiatives for NTHU IBPSA.",
-    skills: ["Event planning", "Strategic direction", "Execution"],
+      "Senior planner directing logistics, cross-departmental teams, and event budgets for international flagship campus events.",
+    highlights: [
+      "Advanced to Senior Planner to direct end-to-end logistics, cross-departmental teams of 15+ members, and more than NT$75,000 budget for international flagship campus events.",
+    ],
+    skills: ["Event planning", "Logistics", "Budget coordination"],
   },
   {
-    organization: "NTHU IBPSA",
-    role: "Junior Event Planner",
-    period: "Jul 2025 — Jun 2026",
-    location: "Hsinchu City, Taiwan",
-    type: "Full-time",
-    description:
-      "Assisted in end-to-end planning, logistics coordination, and execution of campus events, keeping activities aligned with project timelines.",
-    skills: ["Logistics", "Coordination", "Project timelines"],
-  },
-  {
-    organization: "National Tsing Hua University · Institute of Anthropology",
-    role: "Conservation and Inventory Project (Winter Internship)",
+    organization: "NTHU Institute of Anthropology",
+    role: "Conservation & Inventory Project Intern",
     period: "Dec 2025 — Jan 2026",
     location: "Hsinchu City, Taiwan",
     type: "On-site",
     description:
-      "Assisted with inventory, categorization, and digital cataloging of historical artifacts, research specimens, and archival materials.",
-    skills: ["Inventory control", "Cataloging", "Research materials"],
+      "Winter intern supporting the systematic inventory, categorization, and digital archiving of historical and research artifacts.",
+    highlights: [
+      "Executed systematic data cataloging, categorization, and digital archiving for 500+ historical artifacts, improving database search efficiency and ensuring data integrity.",
+    ],
+    skills: ["Data cataloging", "Database archiving", "Inventory control"],
   },
 ];
 
@@ -142,30 +126,32 @@ export const experienceByOrganization: ExperienceGroup[] = experience.reduce<Exp
 
 export const education: EducationEntry[] = [
   {
-    organization: "National Tsing Hua University",
-    program: "Interdisciplinary Program of Engineering · Undergraduate",
-    period: "Degree dates to be added",
+    organization: "National Tsing Hua University (NTHU)",
+    program: "B.S. in Power Mechanical Engineering & Industrial Engineering",
+    period: "2024 – 2028",
     location: "Hsinchu City, Taiwan",
     description:
-      "Current undergraduate student building an interdisciplinary foundation across engineering, systems, and applied problem-solving.",
+      "GPA: 3.5 / 4.0. Relevant coursework: Engineering Economics, Manufacturing Processes, Computer-Aided Drawing, Energy Engineering.",
   },
 ];
 
 export const skillGroups = [
   {
-    label: "Operations",
-    skills: ["Corporate operations", "Quality control", "Administrative documentation", "Manufacturing workflows"],
+    label: "Data & Analytics",
+    skills: [
+      "Data cataloging",
+      "Database archiving",
+      "Advanced Microsoft Excel (VLOOKUP, Pivot Tables)",
+      "Process optimization",
+      "Vibe coding",
+    ],
   },
   {
-    label: "People & events",
-    skills: ["Event planning", "Logistics coordination", "Master of Ceremonies", "Public speaking", "Protocol training"],
+    label: "Engineering & Software",
+    skills: ["Autodesk Inventor", "CAD drawing", "Microsoft Office (PowerPoint, Word)"],
   },
   {
-    label: "Engineering practice",
-    skills: ["Chassis systems", "Production processes", "Workshop safety", "Cross-functional teamwork"],
-  },
-  {
-    label: "Research & organization",
-    skills: ["Inventory control", "Digital cataloging", "Material categorization", "Project timelines"],
+    label: "Languages",
+    skills: ["English (Fluent)", "Chinese (Working proficiency)"],
   },
 ];
