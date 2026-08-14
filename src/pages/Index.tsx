@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { ParticleField } from "@/components/ParticleField";
@@ -7,16 +7,16 @@ import { education, experience, profile, skillGroups } from "@/data/resume";
 import { projects } from "@/data/projects";
 
 const tickerItems = [
-  "Interdisciplinary Engineering",
+  "Engineering student",
   "NTHU",
   "Operations",
-  "Quality Control",
-  "Event Planning",
+  "Process optimization",
+  "Event planning",
   "Master of Ceremonies",
   "Chassis Division",
-  "Manufacturing",
-  "Cataloging",
-  "Protocol Training",
+  "Autodesk Inventor",
+  "Data cataloging",
+  "Protocol training",
 ];
 
 const Index = () => {
@@ -47,7 +47,15 @@ const Index = () => {
             >
               {profile.summary}
             </p>
-            <div className="animate-rise mt-12 flex flex-col items-center gap-3" style={{ animationDelay: "0.45s" }}>
+            <div className="animate-rise mt-12 flex flex-col items-center gap-5" style={{ animationDelay: "0.45s" }}>
+              <a
+                href={profile.resumeUrl}
+                download="Frederick_WIjaya_CV.pdf"
+                className="inline-flex items-center gap-2 border border-accent bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
+              >
+                <Download size={18} />
+                Download CV
+              </a>
               <span className="text-label">Scroll to explore</span>
               <span className="h-12 w-px bg-accent animate-scroll-hint" />
             </div>

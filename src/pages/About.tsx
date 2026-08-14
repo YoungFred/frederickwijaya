@@ -1,4 +1,4 @@
-import { MapPin } from "lucide-react";
+import { Download, MapPin } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { education, experienceByOrganization, profile, skillGroups } from "@/data/resume";
 
@@ -14,6 +14,14 @@ const About = () => {
           <div className="border-l border-accent pl-6 text-lg leading-relaxed text-muted-foreground">
             <p>{profile.summary}</p>
             <p className="mt-5 flex items-center gap-2 text-sm text-foreground"><MapPin size={16} className="text-accent" /> {profile.location}</p>
+            <a
+              href={profile.resumeUrl}
+              download="Frederick_WIjaya_CV.pdf"
+              className="mt-6 inline-flex items-center gap-2 border border-accent bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
+            >
+              <Download size={18} />
+              Download CV
+            </a>
           </div>
         </header>
 
@@ -37,6 +45,11 @@ const About = () => {
                       <div>
                         <h3 className="font-display text-2xl font-semibold leading-tight">{entry.role}</h3>
                         <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">{entry.description}</p>
+                        {entry.highlights && (
+                          <ul className="mt-5 list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
+                            {entry.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+                          </ul>
+                        )}
                         {entry.skills && <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-xs uppercase tracking-widest text-foreground/70">{entry.skills.map((skill) => <span key={skill}>{skill}</span>)}</div>}
                       </div>
                     </div>
