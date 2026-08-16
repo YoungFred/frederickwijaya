@@ -1,15 +1,17 @@
 import { Download, MapPin } from "lucide-react";
 import { Layout } from "@/components/Layout";
-import { education, experienceByOrganization, profile, skillGroups } from "@/data/resume";
+import { useLanguage, useResume } from "@/i18n/LanguageContext";
 
 const About = () => {
+  const { t } = useLanguage();
+  const { education, experienceByOrganization, profile, skillGroups } = useResume();
   return (
     <Layout showEchelonFooter>
       <div className="container-wide py-16 md:py-24">
         <header className="grid grid-cols-1 gap-10 border-b border-separator pb-16 md:grid-cols-[1.2fr_0.8fr] md:items-end md:pb-24">
           <div>
-            <p className="text-label mb-6 text-accent">Resume / profile</p>
-            <h1 className="text-display">About me.</h1>
+            <p className="text-label mb-6 text-accent">{t.about.kicker}</p>
+            <h1 className="text-display">{t.about.title}</h1>
           </div>
           <div className="border-l border-accent pl-6 text-lg leading-relaxed text-muted-foreground">
             <p>{profile.summary}</p>
@@ -20,15 +22,15 @@ const About = () => {
               className="mt-6 inline-flex items-center gap-2 border border-accent bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
             >
               <Download size={18} />
-              Download CV
+              {t.common.downloadCv}
             </a>
           </div>
         </header>
 
         <section className="grid grid-cols-1 gap-12 border-b border-separator py-16 md:grid-cols-[0.7fr_1.3fr] md:gap-24 md:py-24">
           <div>
-            <p className="text-label text-accent">01 / experience</p>
-            <h2 className="text-headline mt-4 max-w-xs">Learning by being in the work.</h2>
+            <p className="text-label text-accent">{t.about.experienceLabel}</p>
+            <h2 className="text-headline mt-4 max-w-xs">{t.about.experienceTitle}</h2>
           </div>
           <div>
             {experienceByOrganization.map((group) => (
@@ -62,7 +64,7 @@ const About = () => {
 
         <section className="grid grid-cols-1 gap-12 border-b border-separator py-16 md:grid-cols-2 md:gap-24 md:py-24">
           <div>
-            <p className="text-label text-accent">02 / education</p>
+            <p className="text-label text-accent">{t.about.educationLabel}</p>
             {education.map((entry) => (
               <article key={entry.organization} className="mt-6">
                 <h2 className="font-display text-3xl font-semibold">{entry.organization}</h2>
@@ -73,7 +75,7 @@ const About = () => {
             ))}
           </div>
           <div>
-            <p className="text-label text-accent">03 / skills</p>
+            <p className="text-label text-accent">{t.about.skillsLabel}</p>
             <div className="mt-6 grid grid-cols-1 gap-7 sm:grid-cols-2">
               {skillGroups.map((group) => (
                 <div key={group.label} className="border-t border-separator pt-4">
@@ -88,10 +90,8 @@ const About = () => {
         </section>
 
         <section className="pt-16 md:pt-24">
-          <p className="text-label text-accent">04 / working style</p>
-          <p className="mt-6 max-w-4xl font-display text-3xl font-semibold leading-tight md:text-5xl">
-            I bring curiosity to unfamiliar systems, care to the details, and energy to the rooms where people work together.
-          </p>
+          <p className="text-label text-accent">{t.about.styleLabel}</p>
+          <p className="mt-6 max-w-4xl font-display text-3xl font-semibold leading-tight md:text-5xl">{t.about.styleText}</p>
         </section>
       </div>
     </Layout>
