@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { ParticleField } from "@/components/ParticleField";
 import { Ticker } from "@/components/Ticker";
-import { education, experience, profile, skillGroups } from "@/data/resume";
 import { projects } from "@/data/projects";
+import { useLanguage, useResume } from "@/i18n/LanguageContext";
 
 const tickerItems = [
   "Engineering student",
@@ -20,8 +20,11 @@ const tickerItems = [
 ];
 
 const Index = () => {
+  const { t } = useLanguage();
+  const { education, experience, profile, skillGroups } = useResume();
   const featuredProjects = projects.slice(0, 3);
-  const currentRoles = experience.filter((entry) => entry.period.includes("Present")).slice(0, 3);
+  const currentRoles = experience.filter((_, index) => [1, 2, 3].includes(index)).slice(0, 3);
+  const [whoBefore, whoAfter] = t.home.whoText.split("{word}");
 
   return (
     <Layout hideFooter noPadding>
@@ -29,8 +32,8 @@ const Index = () => {
         <ParticleField />
         <div className="container-wide relative z-10 flex min-h-screen flex-1 flex-col">
           <div className="flex items-start justify-between pt-28 md:pt-32">
-            <p className="text-label">Hsinchu · Taiwan</p>
-            <p className="text-label">Est. 2005</p>
+            <p className="text-label">{profile.location}</p>
+            <p className="text-label">{t.home.est}</p>
           </div>
 
           <div className="flex flex-1 flex-col items-center justify-center py-16 text-center">
@@ -54,9 +57,9 @@ const Index = () => {
                 className="inline-flex items-center gap-2 border border-accent bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
               >
                 <Download size={18} />
-                Download CV
+                {t.common.downloadCv}
               </a>
-              <span className="text-label">Scroll to explore</span>
+              <span className="text-label">{t.common.scroll}</span>
               <span className="h-12 w-px bg-accent animate-scroll-hint" />
             </div>
           </div>
@@ -68,14 +71,15 @@ const Index = () => {
 
       <section className="relative overflow-hidden border-b border-separator py-24 md:py-36">
         <div className="container-wide">
-          <p className="text-label mb-10 text-accent">01 / who I am</p>
+          <p className="text-label mb-10 text-accent">{t.home.whoLabel}</p>
           <p className="max-w-4xl font-display text-3xl leading-[1.25] md:text-5xl">
-            An engineering student who is equally at home on a production floor, in a workshop, and on stage hosting
-            a ceremony — <span className="italic text-accent">curious</span> about how systems and people work.
+            {whoBefore}
+            <span className="italic text-accent">{t.home.whoWord}</span>
+            {whoAfter}
           </p>
         </div>
         <p className="pointer-events-none mt-16 select-none text-center font-display text-[clamp(4rem,18vw,16rem)] italic leading-none text-accent/25">
-          curious
+          {t.home.whoWord}
         </p>
       </section>
 
@@ -83,11 +87,11 @@ const Index = () => {
         <div className="container-wide">
           <div className="mb-12 flex items-end justify-between gap-6">
             <div>
-              <p className="text-label mb-4 text-accent">02 / now</p>
-              <h2 className="text-headline">What I’m doing</h2>
+              <p className="text-label mb-4 text-accent">{t.home.nowLabel}</p>
+              <h2 className="text-headline">{t.home.nowTitle}</h2>
             </div>
             <Link to="/about" className="hidden items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-accent sm:flex">
-              Full experience <ArrowUpRight size={16} />
+              {t.home.fullExperience} <ArrowUpRight size={16} />
             </Link>
           </div>
           <div className="grid grid-cols-1 border-t border-separator md:grid-cols-3">
@@ -110,13 +114,13 @@ const Index = () => {
         <div className="container-wide">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-24">
             <div>
-              <p className="text-label mb-4 text-accent">03 / selected projects</p>
-              <h2 className="text-headline max-w-md">Projects that show how I think and make.</h2>
+              <p className="text-label mb-4 text-accent">{t.home.projectsLabel}</p>
+              <h2 className="text-headline max-w-md">{t.home.projectsTitle}</h2>
               <Link
                 to="/work"
                 className="text-mono mt-8 inline-flex items-center gap-2 border-b border-foreground pb-2 text-xs uppercase transition-colors hover:border-accent hover:text-accent"
               >
-                Explore all projects <ArrowUpRight size={16} />
+                {t.home.exploreProjects} <ArrowUpRight size={16} />
               </Link>
             </div>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
@@ -148,8 +152,8 @@ const Index = () => {
         <div className="container-wide">
           <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-24">
             <div>
-              <p className="text-label mb-4 text-accent">04 / toolkit</p>
-              <h2 className="text-headline">Skills across systems and people.</h2>
+              <p className="text-label mb-4 text-accent">{t.home.toolkitLabel}</p>
+              <h2 className="text-headline">{t.home.toolkitTitle}</h2>
             </div>
             <div className="space-y-8">
               {skillGroups.slice(0, 3).map((group) => (
@@ -162,7 +166,7 @@ const Index = () => {
           </div>
           <div className="mt-20 grid grid-cols-1 gap-8 border-t border-separator pt-8 text-sm md:grid-cols-2">
             <div>
-              <p className="text-label mb-3">Education</p>
+              <p className="text-label mb-3">{t.common.education}</p>
               <p className="font-display text-2xl">{education[0].organization}</p>
               <p className="mt-1 text-muted-foreground">{education[0].program}</p>
             </div>
@@ -170,7 +174,7 @@ const Index = () => {
               to="/contact"
               className="group flex items-end justify-between border-b border-foreground pb-3 text-lg transition-colors hover:border-accent hover:text-accent"
             >
-              <span>Let’s connect</span>
+              <span>{t.common.letsConnect}</span>
               <ArrowUpRight size={20} className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
             </Link>
           </div>
