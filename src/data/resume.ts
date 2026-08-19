@@ -35,7 +35,7 @@ export const profile = {
   email: "frederickwijaya1688@gmail.com",
   linkedin: "linkedin.com/in/frederick-wijaya",
   instagram: "instagram.com/frederick_wijaya168",
-  tinyUrl: "tinyurl.com/frederickw168",
+  tinyUrl: "instagram.com/frederick_wijaya168",
   resumeUrl: resumeAsset.url,
 };
 
@@ -131,7 +131,7 @@ export const education: EducationEntry[] = [
     period: "2024 – 2028",
     location: "Hsinchu City, Taiwan",
     description:
-      "GPA: 3.5 / 4.0. Relevant coursework: Engineering Economics, Manufacturing Processes, Computer-Aided Drawing, Energy Engineering.",
+      "Currently in 3rd year. GPA: 3.6 / 4.3. University Scholarship recipient since enrollment. Relevant coursework: Engineering Economics, Manufacturing Processes, Computer-Aided Drawing, Energy Engineering.",
   },
 ];
 

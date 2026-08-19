@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import logoAsset from "@/assets/logo-eagle.png.asset.json";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const SESSION_KEY = "intro-shown";
@@ -38,7 +37,8 @@ export function IntroOverlay() {
       className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background transition-opacity duration-700 ${leaving ? "opacity-0" : "opacity-100"}`}
       aria-hidden="true"
     >
-      <img src={logoAsset.url} alt="" className="animate-rise h-20 w-auto md:h-28" />
+      {/* FIXED LINE BELOW: Changed src to load directly from the public folder */}
+      <img src="/logo-eagle.png" alt="Frederick Wijaya eagle logo" className="animate-rise h-20 w-auto md:h-28 object-contain" />
       <h1
         className="animate-rise mt-8 text-center font-display text-[clamp(2.5rem,9vw,7rem)] leading-[0.95] tracking-tight"
         style={{ animationDelay: "0.25s" }}

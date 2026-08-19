@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
-import logoAsset from "@/assets/logo-eagle.png.asset.json";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
@@ -39,7 +38,8 @@ export function Header({ revealMode = false }: HeaderProps) {
         <div className="container-wide">
           <div className="flex h-20 items-center justify-between md:h-20">
             <Link to="/" className="flex items-center gap-3 font-display text-xl tracking-tight text-foreground hover:text-accent transition-colors">
-              <img src={logoAsset.url} alt="Frederick Wijaya eagle logo" className="h-8 w-auto" />
+              {/* UPDATED LINE BELOW: Changed to logo-eagle.png to match your new file */}
+              <img src="/logo-eagle.png" alt="Frederick Wijaya eagle logo" className="h-8 w-auto object-contain" />
               <span>Frederick <span className="text-accent">/</span> 黄瑞鹏</span>
             </Link>
             <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 md:flex">

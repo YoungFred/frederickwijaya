@@ -49,7 +49,7 @@ export const translations: Record<Lang, Dict> = {
     intro: { greeting: "Welcome", enter: "Enter" },
     common: { downloadCv: "Download CV", letsConnect: "Let’s connect", scroll: "Scroll to explore", basedIn: "Based in", education: "Education" },
     home: {
-      est: "Est. 2005",
+      est: "Est. 2006",
       whoLabel: "01 / who I am",
       whoText: "An engineering student who is equally at home on a production floor, in a workshop, and on stage hosting a ceremony — {word} about how systems and people work.",
       whoWord: "curious",
@@ -87,7 +87,7 @@ export const translations: Record<Lang, Dict> = {
     },
     education: {
       program: "B.S. in Power Mechanical Engineering & Industrial Engineering",
-      description: "GPA: 3.5 / 4.0. Relevant coursework: Engineering Economics, Manufacturing Processes, Computer-Aided Drawing, Energy Engineering.",
+      description: "GPA: 3.6 / 4.3. University Scholarship recipient since enrollment. Relevant coursework: Engineering Economics, Manufacturing Processes, Computer-Aided Drawing, Energy Engineering.",
     },
     skillLabels: ["Data & Analytics", "Engineering & Software", "Languages"],
     experience: [
@@ -144,7 +144,7 @@ export const translations: Record<Lang, Dict> = {
     intro: { greeting: "歡迎", enter: "進入" },
     common: { downloadCv: "下載履歷", letsConnect: "與我聯繫", scroll: "向下瀏覽", basedIn: "所在地", education: "學歷" },
     home: {
-      est: "生於 2005",
+      est: "生於 2006",
       whoLabel: "01 / 關於我",
       whoText: "一位工程系學生，既能在生產線與工廠裡動手，也能站上舞台主持典禮——對系統與人的運作充滿{word}。",
       whoWord: "好奇",
@@ -182,7 +182,7 @@ export const translations: Record<Lang, Dict> = {
     },
     education: {
       program: "動力機械工程與工業工程學士",
-      description: "GPA：3.5 / 4.0。相關課程：工程經濟、製造程序、電腦輔助製圖、能源工程。",
+      description: "GPA: 3.6 / 4.3。自入學起獲頒大學獎學金。相關課程：工程經濟學、製造工程、電腦輔助製圖、能源工程。",
     },
     skillLabels: ["資料與分析", "工程與軟體", "語言"],
     experience: [
@@ -239,7 +239,7 @@ export const translations: Record<Lang, Dict> = {
     intro: { greeting: "ようこそ", enter: "入る" },
     common: { downloadCv: "履歴書をダウンロード", letsConnect: "つながりましょう", scroll: "スクロールして見る", basedIn: "拠点", education: "学歴" },
     home: {
-      est: "2005年生まれ",
+      est: "2006年生まれ",
       whoLabel: "01 / 私について",
       whoText: "生産現場でも工房でも、式典の司会でも力を発揮する工学部の学生。システムと人の仕組みに{word}を持っています。",
       whoWord: "好奇心",
@@ -277,7 +277,7 @@ export const translations: Record<Lang, Dict> = {
     },
     education: {
       program: "動力機械工学・産業工学 学士",
-      description: "GPA：3.5 / 4.0。関連科目：エンジニアリングエコノミクス、製造プロセス、CAD製図、エネルギー工学。",
+      description: "GPA: 3.6 / 4.3。入学以来、大学奨学金受給者。関連履修科目：工程経済学、製造プロセス、コンピュータ支援設計（CAD）、エネルギー工学。",
     },
     skillLabels: ["データと分析", "エンジニアリングとソフトウェア", "言語"],
     experience: [
@@ -334,7 +334,7 @@ export const translations: Record<Lang, Dict> = {
     intro: { greeting: "Bienvenue", enter: "Entrer" },
     common: { downloadCv: "Télécharger le CV", letsConnect: "Restons en contact", scroll: "Faites défiler", basedIn: "Basé à", education: "Formation" },
     home: {
-      est: "Né en 2005",
+      est: "Né en 2006",
       whoLabel: "01 / qui je suis",
       whoText: "Un étudiant en ingénierie aussi à l’aise sur une ligne de production, dans un atelier que sur scène pour animer une cérémonie — {word} de comprendre les systèmes et les gens.",
       whoWord: "curieux",
@@ -372,7 +372,7 @@ export const translations: Record<Lang, Dict> = {
     },
     education: {
       program: "Licence en génie mécanique de puissance et génie industriel",
-      description: "Moyenne : 3,5 / 4,0. Cours suivis : économie de l’ingénieur, procédés de fabrication, dessin assisté par ordinateur, ingénierie énergétique.",
+      description: "Moyenne (GPA) : 3,6 / 4,3. Boursier de l'université depuis l'inscription. Cours pertinents : Économie de l'ingénierie, Procédés de fabrication, Dessin assisté par ordinateur (DAO), Ingénierie de l'énergie.",
     },
     skillLabels: ["Données et analyse", "Ingénierie et logiciels", "Langues"],
     experience: [
