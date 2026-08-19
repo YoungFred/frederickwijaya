@@ -22,7 +22,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "neon-glow",
-    title: "Neon Glow",
+    title: "Neon Glow Portraits",
     category: "Photography",
     tags: ["PHOTOGRAPHY", "PORTRAIT"],
     year: "2024",
